@@ -29,5 +29,12 @@ We use the LLAMA 2 7b hf model for finetuning. We configure the LoRA parameters 
    2    | 0.495100      | 0.421361        | 0.751230    |0.750741|
    3    | 0.367600      | 0.383919        | 0.789418    |0.766380|
 
-
+* To finetune the model from scratch, simply run the `finetune_llama.ipynb`. 
+* To load the finetuned model directly without finetuning, use the code below:
+  
+  ```
+  model = LlamaForSequenceClassification.from_pretrained("trinadutta/finetuned_llama")
+  tokenizer = LlamaTokenizer.from_pretrained("trinadutta/finetuned_llama")
+  ```
 ## Collecting activations
+We collect activations from the finetuned llama model on the preproceesed Summeval dataset. For this step, we use [Pyvene](https://stanfordnlp.github.io/pyvene/tutorials/pyvene_101.html) wrappers to collect layerwise and headwise activations.
