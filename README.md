@@ -13,7 +13,7 @@ We combine XSum and [XSum factuality](https://huggingface.co/datasets/google-res
 ### Summeval
 For Summeval, we use the 1700 entries and update the label columns such that expert_consistency is considered as the `is_factual` label similar to XSum. The value of the label is also updated to 0 and 1 and we do this by creating a threshold value of 3.5. If the original value of expert_consistency is below 3.5 then the label is updated to 0(non-factual) and if it is above, it is updated 1(factual).
 
-* To create this datasets, simply run the preprocess_<dataset_name>.py/ipynb files and the datasets will be created locally.
+* To create the datasets, simply run the preprocess_<dataset_name>.py/ipynb files and the datasets will be created locally.
 * To load this dataset, use the same format as Huggingface dataset.
   ```
   dataset = Dataset.load_from_disk("path/to/your/dataset")
